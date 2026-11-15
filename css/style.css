@@ -15,8 +15,11 @@ header {
 }
 
 h1,h2,h3{
-    font-family:Arial, Helvetica, sans-serif
+    font-family:Arial, Helvetica, sans-serif;
+    
 }
+
+
 
 button {
     background-color: navy;
@@ -224,5 +227,39 @@ footer a:hover {
 .map {
     font-size: 18px;
     font-weight:bold ;
+    color: navy;
+}
+
+/**Contact info**/
+.contact-info{
+    max-width: 700px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba (0,0,0,0.08);
+}
+.contact-info h2{
+    text-align: center;
+    color: navy;
+}
+
+.intro{
+    text-align: center;
+    color: black;
+}
+
+.info-item{
+    padding: 12px;
+    border-bottom: 1px solid gray;
+}
+
+.info-item h3{
+    margin: 0 0 4 px;
+    color:black;
+    font-size: 1rem;
+}
+.info-item {
+    margin:0;
     color: navy;
 }
