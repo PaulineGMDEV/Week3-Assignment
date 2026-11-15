@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Website</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
         <h1>Student Management Website</h1>
+        <button class="menu-toggle" id="menuToggle">☰</button>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About us</a></li>
                 <li><a href="courses.html">Courses</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -67,12 +68,21 @@
        </select>
 
        <br><br>
-       <label for="course">Course:</label>
-       <input type="text" id="course"required>
-       <br><br>
        <label for="marks"></label>
        <input type="number" id="marks"min="0" max="100"required>
        <br><br>
+
+        <label for="course">Course:</label>
+         <select id="course"name="course"required>
+            <option value="">Select course</option>
+            <option value="Software Development"></option>
+            <option value="Digital Marketing"></option>
+            <option value="Graphic Design"></option>
+            <option value="Data Analysis"></option>
+            <option value="Cyber Security"></option>
+            <option value="Networking"></option>
+
+         </select>
        <button type="submit">Register Student</button>
 </form>
  </section>
@@ -97,18 +107,29 @@
                 <th>Course</th>
                 <th>Marks</th>
                 <th>Perfomance</th>
+                <th>Action</th>
             </tr>
         </thead>
 
         <tbody id="studentRecords"></tbody>
     </table>
  </section>
+
+
 </main>
 
 /*footer**/
  <footer>
+    <h3>Student Management System</h3>
+
+    <h4>Quick Links</h4>
+    <a href="index.html">Home</a>
+    <a href="about.html">About us</a>
+    <a href="courses.html">Courses</a>
+    <a href="contact.html">Contact</a>
+
     <p>&copy;2026 Student Management System.All rights reserved</p>
  </footer>
-
+<script src="script.js"></script>
 </body>
 </html>
