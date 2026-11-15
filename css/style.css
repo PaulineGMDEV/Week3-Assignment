@@ -19,8 +19,17 @@ h1,h2,h3{
 }
 
 button {
-    background-color: royalblue;
+    background-color: navy;
     color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: royalblue;
 }
 
 nav {
@@ -45,4 +54,138 @@ main {
     max-width: 1200px;
     margin: auto;
 }
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: navy;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+p {
+    line-height: 1.6;
+}
+
+form {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    max-width: 600px;
+    box-shadow: 0 2px 8px lightgray;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input,select,textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input:focus, select:focus,textarea:focus {
+    outline: 2px solid royalblue;
+}
+ 
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    margin-top: 20px;
+}
+
+th {
+    background-color: navy;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+td {
+    padding: 12px;
+    border-bottom:1px solid lightgray;
+}
+
+tr:hover {
+    background-color: lightblue;
+}
+
+.course-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.course-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px lightgray;
+    text-align: center;
+}
+
+.course-card:hover {
+    transform: translate(-5px);
+    transition: 0.3s;
+}
+
+.course-card h3 {
+color: navy;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.stat-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px lightgray;
+    text-align: center;
+}
+
+.stat-card h3 {
+    color: navy;
+}
+
+.stat-card p {
+    font-size: 24px;
+    font-weight: bold;
+}
+/*About us*/
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.team-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow:0 2px 8px lightgray ;
+    text-align: center;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    transition:0.3s;
+}
+
+.team-card h3 {
+    color: navy;
+}
+
+
 
