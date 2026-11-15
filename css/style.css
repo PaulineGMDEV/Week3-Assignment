@@ -10,16 +10,20 @@ body {
 header {
     background-color: navy;
     color: white;
-    padding: 20px;
-    text-align: center;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
 }
 
 h1,h2,h3{
     font-family:Arial, Helvetica, sans-serif;
     
 }
-
-
+.hero p{
+    text-align: center;
+    font-size: 20px;
+    
+}
 
 button {
     background-color: navy;
@@ -195,7 +199,7 @@ footer {
 background-color:navy;
 color:white;
 text-align: center;
-padding: 10px;
+padding: 5px;
 margin-top: 10px;
 }
 
@@ -262,4 +266,12 @@ footer a:hover {
 .info-item {
     margin:0;
     color: navy;
+}
+.menu-toggle {
+    background-color: navy;
+    color: white;
+    border: none;
+    padding: 10px; 15px;
+    float:right;
+  
 }

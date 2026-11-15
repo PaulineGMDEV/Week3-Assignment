@@ -12,7 +12,7 @@ studentForm.addEventListener("submit",function(event){
         age:document.getElementById("age").value,
         gender:document.getElementById("gender").value,
         course:document.getElementById("course").value,
-        marks:Number(document.ElementById("marks").value,
+        marks:Number(document.getElementById("marks").value,
     };
     students.push(student);
     displayStudents();
