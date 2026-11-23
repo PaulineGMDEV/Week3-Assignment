@@ -1,670 +1,704 @@
-header{
-    background-color: #243b80;
-    width: 100%;
-    padding: 15px;
+/* =========================
+   1. GENERAL STYLING
+========================= */
+
+:root {
+    --primary: #192b59;
+    --secondary: #36c878;
+    --light: #f5f7fb;
+    --dark: #202943;
+    --grey: #788196;
+    --white: #ffffff;
+    --border: #e5e9f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-/* HOME SECTION */
-.home-section {
-    padding: 40px 6%;
-    background-color: #f4f6fb;
+html {
+    scroll-behavior: smooth;
 }
 
-/*Navigation*/
-.navbar {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100%;
+body {
+    font-family: Arial, sans-serif;
+    background: var(--white);
+    color: var(--dark);
+    line-height: 1.6;
 }
 
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-links a {  
-    color:#243b80 ;
+a {
     text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
-    color: #c5d4ff;
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+
+/* =========================
+   2. HEADER AND NAVIGATION
+========================= */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 7%;
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.logo h2 {
+    color: var(--primary);
+    font-size: 25px;
+}
+
+.logo span {
+    color: var(--secondary);
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--secondary);
 }
 
 .menu-toggle {
     display: none;
-    background-color: transparent;
     border: none;
-    color: #243b80;
-    font-size: 28px;
+    background: var(--light);
+    color: var(--primary);
+    font-size: 25px;
+    padding: 5px 10px;
     cursor: pointer;
 }
 
-/* Responsive header */
-@media (max-width: 768px) {
-    .navbar {
-        flex-wrap: wrap;
-    }
 
-    .menu-toggle {
-        display: block;
-        margin-left: auto;
-    }
+/* =========================
+   3. HERO SECTION
+========================= */
 
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        gap: 15px;
-        padding-top: 20px;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
+.hero {
+    background: linear-gradient(
+        120deg,
+        #192b59,
+        #314c88
+    );
+    color: var(--white);
+    padding: 100px 7%;
+    min-height: 380px;
+    display: flex;
+    align-items: center;
 }
 
-
-/* STUDENT STATISTICS */
-.statistics {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    margin: 30px 0 45px;
+.hero-content {
+    max-width: 650px;
 }
 
-.stat-card {
-    background-color: white;
-    padding: 25px 15px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-}
-
-.stat-card h3 {
-    color: #555;
-    font-size: 16px;
-}
-
-.stat-card p {
-    color: #243b80;
-    font-size: 30px;
+.tagline,
+.subtitle {
+    color: var(--secondary);
+    font-size: 11px;
     font-weight: bold;
-    margin-top: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
 }
 
-/* REGISTRATION SECTION */
-.registration-section,
-.records-section {
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    margin-bottom: 35px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+.hero h1 {
+    font-size: 43px;
+    line-height: 1.2;
+    margin-bottom: 18px;
 }
 
-.registration-section h2,
-.records-section h2 {
-    color: #243b80;
-    margin-bottom: 10px;
+.hero h1 span {
+    color: var(--secondary);
 }
 
-.registration-section > p,
-.records-section > p {
-    color: #666;
+.hero-content > p:not(.tagline) {
+    color: #d6ddec;
+    max-width: 500px;
     margin-bottom: 25px;
 }
 
-#student-form {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
 
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
+/* =========================
+   4. BUTTONS
+========================= */
 
-.form-group label {
-    color: #172750;
-    font-weight: 600;
-}
-
-.form-group input,
-.form-group select {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 15px;
-}
-
-.submit-btn {
-    background-color: #243b80;
-    color: white;
-    padding: 13px 20px;
+.btn {
+    display: inline-block;
+    background: var(--secondary);
+    color: var(--white);
+    padding: 12px 22px;
     border: none;
-    border-radius: 5px;
+    border-radius: 7px;
+    font-weight: bold;
+    font-size: 13px;
     cursor: pointer;
-    font-size: 15px;
-    grid-column: 1 / -1;
+    transition: 0.3s;
 }
 
-.submit-btn:hover {
-    background-color: #172750;
-}
-
-/* STUDENT RECORDS */
-#search-student {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    box-sizing: border-box;
-}
-
-.table-container {
-    width: 100%;
-    overflow-x: auto;
-}
-
-.records-section table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 750px;
-}
-
-.records-section th {
-    background-color: #243b80;
-    color: white;
-    padding: 14px;
-    text-align: left;
-}
-
-.records-section td {
-    padding: 14px;
-    border-bottom: 1px solid #ddd;
-}
-
-/* RESPONSIVE DESIGN */
-@media (max-width: 900px) {
-    .statistics {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .statistics {
-        grid-template-columns: 1fr;
-    }
-
-    #student-form {
-        grid-template-columns: 1fr;
-    }
-
-    .registration-section,
-    .records-section {
-        padding: 20px;
-    }
-
-    .welcome h1 {
-        font-size: 28px;
-    }
+.btn:hover {
+    background: #249b5b;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
 
-/*About section*/
-.about-section {
-    padding: 60px 30px;
-    background-color: #243b80;
-    text-align: center;
-    color: white;
+/* =========================
+   5. GENERAL SECTIONS
+========================= */
+
+.section {
+    padding: 65px 7%;
 }
 
-.about-section h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
+.section-heading {
+    margin-bottom: 25px;
 }
 
-.about-section p {
-    max-width: 800px;
-    margin: auto;
-    line-height: 1.8;
-    font-size: 16px;
+.section-heading h2,
+.section h2 {
+    color: var(--primary);
+    font-size: 27px;
+    margin-bottom: 8px;
 }
 
-/**mission,vision,story*/
-.institution-section {
-    padding: 60px 30px;
-    background-color: #f4f6fb;
-    text-align: center;
+.section-heading p:not(.subtitle) {
+    color: var(--grey);
+    font-size: 13px;
 }
 
-.institution-section h2 {
-    color: #243b80;
-    font-size: 30px;
-    margin-bottom: 35px;
-}
 
-.about-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    max-width: 1100px;
-    margin: auto;
-}
-
-.about-card {
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    text-align: left;
-    border-top: 4px solid #243b80;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: 0.3s ease;
-}
-
-.about-card:hover {
-    transform: translateY(-6px);
-}
-
-.about-card h3 {
-    color: #243b80;
-    font-size: 21px;
-    margin-bottom: 15px;
-}
-
-.about-card p {
-    color: #555;
-    line-height: 1.8;
-}
-
-/*core values*/
-.values-section {
-    padding: 60px 30px;
-    background-color: white;
-    text-align: center;
-}
-
-.values-section h2 {
-    color: #243b80;
-    font-size: 30px;
-    margin-bottom: 15px;
-}
-
-.values-section > p {
-    color: #666;
-    margin-bottom: 35px;
-}
-
-.values-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    max-width: 1100px;
-    margin: auto;
-}
-
-.value-card {
-    background-color: #f4f6fb;
-    padding: 25px;
-    border-radius: 10px;
-    border-bottom: 3px solid #243b80;
-    transition: 0.3s ease;
-}
-
-.value-card:hover {
-    background-color: #e5ebfa;
-    transform: translateY(-5px);
-}
-
-.value-card h3 {
-    color: #243b80;
-    margin-bottom: 12px;
-}
-
-.value-card p {
-    color: #555;
-    line-height: 1.6;
-}
-
-/**meet the team*/
-.team-section {
-    padding: 60px 30px;
-    background-color: #f4f6fb;
-    text-align: center;
-}
-
-.team-section h2 {
-    color: #243b80;
-    font-size: 30px;
-    margin-bottom: 15px;
-}
-
-.team-section > p {
-    color: #555;
-    margin-bottom: 35px;
-}
-
-.team-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-.team-card {
-    background-color: white;
-    width: 260px;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: 0.3s ease;
-}
-
-.team-card:hover {
-    transform: translateY(-7px);
-}
-
-.team-card img {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #243b80;
-}
-
-.team-card h3 {
-    color: #243b80;
-    margin: 15px 0 8px;
-}
-
-.team-card p {
-    color: #666;
-}
-
-/*institution in numbers*/
-.stats-section {
-    padding: 50px 25px;
-    background-color: #243b80;
-    text-align: center;
-}
-
-.stats-section h2 {
-    color: white;
-    font-size: 30px;
-    margin-bottom: 12px;
-}
-
-.stats-section > p {
-    color: #dce4f7;
-    margin-bottom: 30px;
-}
+/* =========================
+   6. DASHBOARD STATISTICS
+========================= */
 
 .stats-container {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
 
 .stat-card {
-    background-color: white;
-    width: 220px;
-    padding: 25px 15px;
-    border-radius: 10px;
-    transition: 0.3s ease;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+    transition: 0.3s;
 }
 
 .stat-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-5px);
 }
 
 .stat-card h3 {
-    color: #243b80;
-    font-size: 40px;
+    color: var(--grey);
+    font-size: 13px;
     margin-bottom: 10px;
 }
 
 .stat-card p {
-    color: #555;
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+
+/* =========================
+   7. REGISTRATION FORM
+========================= */
+
+#student-form,
+#contact-form {
+    background: var(--white);
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.04);
+    max-width: 750px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 7px;
+    color: var(--dark);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    font-size: 13px;
+    outline: none;
+    background: var(--white);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(54, 200, 120, 0.12);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+#form-message,
+#contact-feedback {
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.error {
+    color: #d83232;
+}
+
+.success {
+    color: #159957;
+}
+
+
+/* =========================
+   8. SEARCH AND TABLE
+========================= */
+
+.search-container {
+    margin-bottom: 20px;
+}
+
+.search-container input {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    outline: none;
+}
+
+.search-container input:focus {
+    border-color: var(--secondary);
+}
+
+.table-container {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+    min-width: 750px;
+    border-collapse: collapse;
+}
+
+thead {
+    background: var(--primary);
+    color: var(--white);
+}
+
+th,
+td {
+    padding: 15px 12px;
+    text-align: left;
+    font-size: 12px;
+}
+
+tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: 0.2s;
+}
+
+tbody tr:hover {
+    background: #f2f8f4;
+}
+
+.performance {
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 10px;
     font-weight: bold;
 }
 
-
-/*courses**/
-.courses-section {
-    padding: 60px 8%;
-    background-color: #f4f6fb;
-    text-align: center;
+.excellent,
+.very-good {
+    background: #e3f8eb;
+    color: #16864c;
 }
 
-.courses-intro h2 {
-    color: #243b80;
-    font-size: 32px;
+.good {
+    background: #e8f1ff;
+    color: #3675b8;
+}
+
+.average {
+    background: #fff2d9;
+    color: #a97816;
+}
+
+.failed {
+    background: #ffe6e6;
+    color: #c52f2f;
+}
+
+.action-btn {
+    border: 1px solid var(--border);
+    background: white;
+    padding: 6px 9px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 2px;
+    font-size: 10px;
+}
+
+.action-btn:hover {
+    border-color: var(--secondary);
+    color: var(--secondary);
+}
+
+.delete-btn:hover {
+    border-color: #d83232;
+    color: #d83232;
+}
+
+.empty-state {
+    text-align: center;
+    color: var(--grey);
+}
+
+.storage-message {
+    color: #159957;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+
+/* =========================
+   9. ABOUT PAGE
+========================= */
+
+.page-banner {
+    text-align: center;
+    background: var(--light);
+    padding: 75px 7%;
+}
+
+.page-banner h1 {
+    font-size: 36px;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.page-banner p:last-child {
+    color: var(--grey);
+    font-size: 14px;
+}
+
+.about-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-section p:not(.subtitle) {
+    color: var(--grey);
+    font-size: 14px;
     margin-bottom: 15px;
 }
 
-.courses-intro p {
-    color: #555;
-    max-width: 750px;
-    margin: 0 auto 40px;
-    line-height: 1.7;
+.about-image {
+    min-height: 280px;
+    background: linear-gradient(135deg, #192b59, #36c878);
+    border-radius: 15px;
+    display: grid;
+    place-items: center;
 }
+
+.about-image span {
+    color: white;
+    font-size: 90px;
+    font-weight: bold;
+}
+
+.info-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.info-card {
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+}
+
+.info-card h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.info-card p {
+    font-size: 13px;
+    color: var(--grey);
+}
+
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.team-card {
+    text-align: center;
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.team-avatar {
+    width: 65px;
+    height: 65px;
+    background: #e3f8eb;
+    color: var(--primary);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 15px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.team-card h3 {
+    color: var(--primary);
+    font-size: 15px;
+}
+
+.team-card p {
+    color: var(--grey);
+    font-size: 12px;
+}
+
+
+/* =========================
+   10. COURSES PAGE
+========================= */
 
 .courses-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    gap: 20px;
 }
 
 .course-card {
-    background-color: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
     padding: 25px;
-    border-radius: 10px;
-    text-align: left;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-}
-
-.course-card h3 {
-    color: #243b80;
-    margin-bottom: 20px;
-}
-
-.course-card p {
-    color: #555;
-    margin: 12px 0;
-}
-
-@media (max-width: 768px) {
-    .courses-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 500px) {
-    .courses-container {
-        grid-template-columns: 1fr;
-    }
-}
-.register-btn {
-    display: inline-block;
-    background-color: #243b80;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 15px;
     transition: 0.3s;
 }
 
-.register-btn:hover {
-    background-color: #172750;
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
-/*footer*/
-.footer {
-    background-color: #172750;
-    color: white;
-    padding: 45px 30px 15px;
-}
-
-.footer-content {
+.course-icon {
+    width: 50px;
+    height: 50px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 35px;
-    max-width: 1100px;
-    margin: auto;
-}
-
-.footer-content h3 {
+    place-items: center;
+    background: #e3f8eb;
+    color: var(--primary);
+    border-radius: 10px;
+    font-size: 23px;
     margin-bottom: 15px;
-    color: white;
 }
 
-.footer-content p {
-    color: #dce4f7;
-    line-height: 1.7;
-}
-
-.footer-content a {
-    display: block;
-    color: #dce4f7;
-    text-decoration: none;
+.course-card h3 {
+    color: var(--primary);
+    font-size: 16px;
     margin-bottom: 10px;
 }
 
-.footer-content a:hover {
-    color: white;
-    text-decoration: underline;
-}
-
-.copyright {
-    text-align: center;
-    border-top: 1px solid #526080;
-    padding-top: 20px;
-    margin-top: 35px;
-    color: #dce4f7;
-    font-size: 14px;
+.course-card p {
+    color: var(--grey);
+    font-size: 12px;
+    min-height: 60px;
+    margin-bottom: 18px;
 }
 
 
-/*contact section*/
+/* =========================
+   11. CONTACT PAGE
+========================= */
 
 .contact-section {
-    padding: 60px 30px;
-    background-color: #f4f6fb;
-    text-align: center;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.contact-section h2 {
-    color: #243b80;
-    font-size: 32px;
-    margin-bottom: 15px;
-}
-
-.contact-intro {
-    color: #555;
-    max-width: 700px;
-    margin: 0 auto 40px;
-    line-height: 1.8;
-}
-
-.contact-container {
     display: grid;
-    grid-template-columns: 1fr 1.3fr;
-    gap: 30px;
-    max-width: 1100px;
-    margin: auto;
-    text-align: left;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
 }
 
-.contact-info {
-    background-color: #243b80;
-    color: white;
-    padding: 35px;
-    border-radius: 12px;
-}
-
-.contact-info h3,
-.contact-form h3 {
-    font-size: 23px;
+.contact-details h2 {
     margin-bottom: 25px;
 }
 
 .contact-item {
-    margin-bottom: 25px;
+    margin-bottom: 22px;
 }
 
-.contact-item h4 {
-    margin-bottom: 8px;
-    color: #dce4f7;
+.contact-item h3 {
+    font-size: 14px;
+    color: var(--primary);
 }
 
 .contact-item p {
-    line-height: 1.6;
+    font-size: 13px;
+    color: var(--grey);
 }
 
-.contact-form {
-    background-color: white;
-    padding: 35px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+/* =========================
+   12. FOOTER
+========================= */
+
+footer {
+    background: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: 35px 7%;
 }
 
-.contact-form h3 {
-    color: #243b80;
+footer h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
 }
 
-.contact-form label {
-    display: block;
-    margin-bottom: 8px;
-    color: #333;
-    font-weight: bold;
+footer p {
+    color: #cbd5e1;
+    font-size: 12px;
+    margin-bottom: 7px;
 }
 
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 18px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+
+/* =========================
+   13. RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 900px) {
+
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .courses-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-section,
+    .contact-section {
+        grid-template-columns: 1fr;
+    }
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border-color: #243b80;
-}
+@media (max-width: 600px) {
 
-.contact-form button {
-    background-color: #243b80;
-    color: white;
-    padding: 13px 25px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 15px;
-    transition: 0.3s;
-}
+    header {
+        padding: 15px 5%;
+    }
 
-.contact-form button:hover {
-    background-color: #172750;
-}
+    .menu-toggle {
+        display: block;
+    }
 
-  
+    nav {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 20px 5%;
+        gap: 18px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    nav.open {
+        display: flex;
+    }
+
+    .hero {
+        padding: 70px 6%;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .section {
+        padding: 45px 5%;
+    }
+
+    .stats-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .stat-card {
+        padding: 17px;
+    }
+
+    .stat-card p {
+        font-size: 24px;
+    }
+
+    .courses-container,
+    .info-container,
+    .team-container {
+        grid-template-columns: 1fr;
+    }
+
+    .page-banner {
+        padding: 55px 5%;
+    }
+
+    .page-banner h1 {
+        font-size: 28px;
+    }
+
+    #student-form,
+    #contact-form {
+        padding: 20px;
+    }
+}

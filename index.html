@@ -1,174 +1,210 @@
-<!DOCTYPE html>
+
+   <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Website</title>
+    <title>Nova Institute | Dashboard</title>
     <link rel="stylesheet" href="css/style.css">
+    
 </head>
 
-  <header>
-    <section class="home-section" id="home">
-        <h1>Elevate Digital Institute</h1>
-      <nav class="navbar">
+<body>
 
-    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
-        ☰
-    </button>
+    <!-- HEADER AND NAVIGATION -->
+    <header>
+        <div class="logo">
+            <h2><span>.</span></h2>
+        </div>
 
-    <ul class="nav-links" id="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="courses.html">Courses</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
+        <button class="menu-toggle" id="menu-toggle">☰</button>
 
-</nav>
+        <nav id="nav-menu">
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="courses.html">Courses</a>
+            <a href="contact.html">Contact</a>
+        </nav>
     </header>
 
-<section>
-        <div class="statistics">
-            <div class="stat-card">
-                <h3>Total Students</h3>
-                <p id="total-students">0</p>
-            </div>
-
-            <div class="stat-card">
-                <h3>Average Marks</h3>
-                <p id="average-marks">0</p>
-            </div>
-
-            <div class="stat-card">
-                <h3>Students Passed</h3>
-                <p id="students-passed">0</p>
-            </div>
-
-            <div class="stat-card">
-                <h3>Students Failed</h3>
-                <p id="students-failed">0</p>
-            </div>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="tagline">EQUIP TALENT, SHAPE TOMORROW</p>
+            <h1>Welcome to <span>NOva Institute</span></h1>
+            <p>
+                Empowering learners with practical skills,
+                knowledge and opportunities for a brighter future.
+            </p>
+            <a href="#registration" class="btn">Register a Student</a>
         </div>
     </section>
 
-        
-        <div class="registration-section" id="register">
-            <h2>Student Registration</h2>
-            <p>Enter the student's details to register.</p>
+    <main>
+
+        <!-- DASHBOARD STATISTICS -->
+        <section class="section">
+            <div class="section-heading">
+                <div>
+                    <p class="subtitle">OVERVIEW</p>
+                    <h2>Student Dashboard</h2>
+                    <p>Keep track of your students and their performance.</p>
+                </div>
+                <p id="today-date"></p>
+            </div>
+
+            <div class="stats-container">
+
+                <div class="stat-card">
+                    <h3>Total Students</h3>
+                    <p id="total-students">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Students Passed</h3>
+                    <p id="passed-students">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Students Failed</h3>
+                    <p id="failed-students">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Average Marks</h3>
+                    <p id="average-marks">0%</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- STUDENT REGISTRATION -->
+        <section class="section" id="registration">
+
+            <div class="section-heading">
+                <div>
+                    <p class="subtitle">NEW LEARNER</p>
+                    <h2>Student Registration</h2>
+                    <p>Enter the student's information below.</p>
+                </div>
+            </div>
 
             <form id="student-form">
 
                 <div class="form-group">
                     <label for="student-name">Full Name</label>
-                    <input type="text" id="student-name"
-                        placeholder="Enter full name" required>
+                    <input
+                        type="text"
+                        id="student-name"
+                        placeholder="Enter student's full name"
+                    >
                 </div>
 
                 <div class="form-group">
                     <label for="student-age">Age</label>
-                    <input type="number" id="student-age"
-                        placeholder="Enter age" min="1" required>
+                    <input
+                        type="number"
+                        id="student-age"
+                        placeholder="Enter age"
+                    >
                 </div>
 
                 <div class="form-group">
                     <label for="student-gender">Gender</label>
-                    <select id="student-gender" required>
-                        <option value="">Select Gender</option>
-                        <option value="Male">Male</option>
+                    <select id="student-gender">
+                        <option value="">Select gender</option>
                         <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                        <option value="Prefer not to say">Prefer not to say</option>
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label for="student-course">Course</label>
-                    <select id="student-course" required>
-                        <option value="">Select Course</option>
+                    <select id="student-course">
+                        <option value="">Select course</option>
                         <option value="Software Development">Software Development</option>
-                        <option value="Digital Marketing">Digital Marketing</option>
-                        <option value="Graphic Design">Graphic Design</option>
+                        <option value="Web Design">Web Design</option>
                         <option value="Data Analysis">Data Analysis</option>
-                        <option value="Cybersecurity">Cybersecurity</option>
+                        <option value="Cyber Security">Cyber Security</option>
                         <option value="Networking">Networking</option>
+                        <option value="Graphic Design">Graphic Design</option>
                     </select>
                 </div>
 
-                <button type="submit" class="submit-btn">
+                <div class="form-group">
+                    <label for="student-marks">Marks</label>
+                    <input
+                        type="number"
+                        id="student-marks"
+                        placeholder="Enter marks (0-100)"
+                    >
+                </div>
+
+                <p id="form-message"></p>
+
+                <button type="submit" class="btn">
                     Register Student
                 </button>
 
             </form>
-        </div>
+        </section>
 
-        
-        <div class="records-section" id="records">
-            <h2>Student Records</h2>
-            <p>Search and manage registered student information.</p>
+        <!-- STUDENT RECORDS -->
+        <section class="section">
 
-            <input type="text" id="search-student"
-                placeholder="Search by full name...">
+            <div class="section-heading">
+                <div>
+                    <p class="subtitle">LEARNER DIRECTORY</p>
+                    <h2>Student Records</h2>
+                    <p>View and manage registered students.</p>
+                </div>
+            </div>
+
+            <div class="search-container">
+                <input
+                    type="text"
+                    id="search-input"
+                    placeholder="Search student by name..."
+                >
+            </div>
 
             <div class="table-container">
                 <table>
+
                     <thead>
                         <tr>
-                            <th>Full Name</th>
+                            <th>Name</th>
                             <th>Age</th>
                             <th>Gender</th>
                             <th>Course</th>
                             <th>Marks</th>
                             <th>Performance</th>
-                            <th>Action</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
 
-                    <tbody id="student-records">
-                        <!-- Student records will appear here -->
+                    <tbody id="student-table">
+                        <!-- JavaScript will display students here -->
                     </tbody>
+
                 </table>
             </div>
-        </div>
 
-    </section>
+            <div class="storage-message">
+                <p>✓ Student records are saved automatically in this browser.</p>
+            </div>
 
-</main>
+        </section>
 
+    </main>
 
-<footer class="footer">
-
-    <div class="footer-content">
-
-        <div>
-            <h3>Our Institution</h3>
-            <p>
-                Empowering students through quality education,
-                skills development and innovation.
-            </p>
-        </div>
-
-        <div>
-            <h3>Quick Links</h3>
-            <a href="#Home">Home</a>
-            <a href="#About">About us</a>
-            <a href="#courses">Courses</a>
-            <a href="#contact">Contact</a>
-        </div>
-
-        <div>
-            <h3>Contact Us</h3>
-            <p>Email: info@institution.com</p>
-            <p>Phone: +254 700 000 000</p>
-        </div>
-
-    </div>
-
-    <p class="copyright">
-        &copy; 2026 Our Institution. All Rights Reserved.
-    </p>
-
-</footer>
-    <script src="js/script.js"></script>
-</body>
-</html>
-
+    <!-- FOOTER -->
+    <footer>
+        <h2>Nova Institute</h2>
+        <p>Equip Talent, Shape Tomorrow.</p>
+        <p>&copy; 2026 BrightPath Institute. All rights reserved.</p>
+    </footer>
 <script src="js/script.js"></script>
 </body>
 </html>
